@@ -10,4 +10,3 @@ const ironman:Person  = {
 };
 
 console.log(ironman)
-
