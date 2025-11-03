@@ -1,16 +1,18 @@
-const myPromise = new Promise((resolve, reject) => {
+const myPromise = new Promise<number>((resolve, reject) => {
     setTimeout(() => {
-        // Give my money back!
-        reject('My foo is in jail!');
-    }, 5000);
-})
+        //! Yo quiero mi dinero!!
+        resolve(100);
+        // reject('Mi amigo se perdió');
+    }, 2000); // 2 segundos
+});
 
-myPromise.then((myMoney) => {
-    console.log(`Got my Money Back ${myMoney}`);
-})
-.catch((reason) => {
-    console.warn(reason);
-})
-.finally(() =>{
-    console.log('Gotta get that money back!')
-})
+myPromise
+    .then((myMoney) => {
+        console.log(`Tengo mi dinero ${myMoney}`);
+    })
+    .catch((reason) => {
+        console.warn(reason);
+    })
+    .finally(() => {
+        console.log('Pues sa seguir con mi vida');
+    });
